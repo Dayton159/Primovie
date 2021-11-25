@@ -1,0 +1,24 @@
+# Primovie
+Movie App using themoviedb.org built with VIPER & RxSwift
+
+## How to Run
+- Clone Repository
+- Install cocoapods `sudo gem install cocoapods` and run `pod install`
+- Build and Run Project
+
+## Feature
+* Display Now Playing, Top Rated, and Popular Movies List
+* Search for Movies
+* Bookmark movies and save to favorite list
+* Delete movies from favorite list
+* Display Movie Detailed Information
+
+## Technology Used
+* XIB and VIPER Clean Architecture
+* RxSwift Reactive Framework
+* Core Data
+* Networking
+* Dependency Injection, Singleton, Coordinator, Builder, and Factory Design Pattern
+* Unit Testing
+
+## Demo

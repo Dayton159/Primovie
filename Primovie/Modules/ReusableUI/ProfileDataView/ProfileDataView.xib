@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Semibold.ttf">
+            <string>Lato-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileDataView" customModule="Primovie" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="V9K-w4-KGL"/>
+                <outlet property="imageView" destination="RVR-vv-ahk" id="lhe-9g-K4X"/>
+                <outlet property="profileLabel" destination="udW-yV-QAM" id="bFh-EW-BrZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aT3-OH-dPx">
+                    <rect key="frame" x="8" y="49" width="406" height="1"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="yyR-N5-oR1"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RVR-vv-ahk">
+                    <rect key="frame" x="8" y="11" width="28" height="28"/>
+                    <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="0nG-Lt-4NG"/>
+                        <constraint firstAttribute="width" constant="28" id="AZV-Gx-cOw"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udW-yV-QAM">
+                    <rect key="frame" x="51" y="9" width="363" height="32"/>
+                    <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="aT3-OH-dPx" secondAttribute="trailing" id="0Fh-vM-95p"/>
+                <constraint firstItem="aT3-OH-dPx" firstAttribute="top" secondItem="udW-yV-QAM" secondAttribute="bottom" constant="8" id="DjP-Y0-8f4"/>
+                <constraint firstItem="aT3-OH-dPx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Ff4-Va-P7j"/>
+                <constraint firstItem="RVR-vv-ahk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ToA-oF-p0h"/>
+                <constraint firstItem="udW-yV-QAM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="d2y-5e-Ei8"/>
+                <constraint firstItem="RVR-vv-ahk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eDM-1k-OLD"/>
+                <constraint firstAttribute="trailing" secondItem="udW-yV-QAM" secondAttribute="trailing" id="lqd-Oc-HdQ"/>
+                <constraint firstItem="aT3-OH-dPx" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="nD7-ly-oB5"/>
+                <constraint firstItem="udW-yV-QAM" firstAttribute="leading" secondItem="RVR-vv-ahk" secondAttribute="trailing" constant="15" id="znN-lM-Qmq"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="131.8840579710145" y="102.45535714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

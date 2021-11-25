@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="URT-1X-QMQ" customClass="CollectionHeaderView" customModule="Primovie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8FK-nY-C6V">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBx-YM-SQ3">
+                            <rect key="frame" x="5" y="7.5" width="409" height="29"/>
+                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="SBx-YM-SQ3" secondAttribute="trailing" id="oiM-eH-MZz"/>
+                        <constraint firstItem="SBx-YM-SQ3" firstAttribute="centerY" secondItem="8FK-nY-C6V" secondAttribute="centerY" id="q5n-Us-dLJ"/>
+                        <constraint firstItem="SBx-YM-SQ3" firstAttribute="leading" secondItem="8FK-nY-C6V" secondAttribute="leading" constant="5" id="vFV-pd-wEg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="k0r-IL-WKa"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8FK-nY-C6V" secondAttribute="bottom" id="76d-Gb-oKp"/>
+                <constraint firstItem="8FK-nY-C6V" firstAttribute="leading" secondItem="k0r-IL-WKa" secondAttribute="leading" id="WAH-KK-1wD"/>
+                <constraint firstItem="k0r-IL-WKa" firstAttribute="trailing" secondItem="8FK-nY-C6V" secondAttribute="trailing" id="bfg-ac-scV"/>
+                <constraint firstItem="8FK-nY-C6V" firstAttribute="top" secondItem="URT-1X-QMQ" secondAttribute="top" id="d7P-y4-jqx"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="headerLabel" destination="SBx-YM-SQ3" id="Iq9-Rq-GzC"/>
+            </connections>
+            <point key="canvasLocation" x="202" y="-28"/>
+        </collectionReusableView>
+    </objects>
+</document>

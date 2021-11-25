@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutView" customModule="Primovie" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="mVp-Wm-M6t"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="ZfP-0i-bgn">
+                    <rect key="frame" x="127" y="59" width="160" height="160"/>
+                    <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="cWh-QG-F5F"/>
+                        <constraint firstAttribute="height" constant="160" id="lo2-yO-VJ8"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="80"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SJP-Fc-kAT">
+                    <rect key="frame" x="30" y="234" width="354" height="245"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJh-kA-pHY" customClass="ProfileDataView" customModule="Primovie" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="8K5-7c-MMu"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="person" catalog="system"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="profileData" value="Dayton"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQv-zE-DKm" customClass="ProfileDataView" customModule="Primovie" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="65" width="354" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="mail" catalog="system"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="profileData" value="dayton159@gmail.com"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTB-ce-6sO" customClass="ProfileDataView" customModule="Primovie" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="130" width="354" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="building.columns" catalog="system"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="profileData" value="Universitas Internasional Batam"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypb-QX-SgV" customClass="ProfileDataView" customModule="Primovie" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="195" width="354" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="building.2" catalog="system"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="profileData" value="Tanjungpinang"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="SJP-Fc-kAT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="1D1-vu-l8y"/>
+                <constraint firstItem="ZfP-0i-bgn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hna-IV-WdQ"/>
+                <constraint firstItem="SJP-Fc-kAT" firstAttribute="top" secondItem="ZfP-0i-bgn" secondAttribute="bottom" constant="15" id="TDl-nk-YlC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SJP-Fc-kAT" secondAttribute="bottom" constant="15" id="uB2-dY-12l"/>
+                <constraint firstItem="ZfP-0i-bgn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="ww6-FJ-8hu"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="SJP-Fc-kAT" secondAttribute="trailing" constant="30" id="zy8-0q-oNl"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="103"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="building.2" catalog="system" width="128" height="106"/>
+        <image name="building.columns" catalog="system" width="128" height="113"/>
+        <image name="mail" catalog="system" width="128" height="93"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="profile" width="500" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

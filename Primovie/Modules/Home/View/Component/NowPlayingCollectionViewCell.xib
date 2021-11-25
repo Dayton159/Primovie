@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wme-Fs-Me8" customClass="NowPlayingCollectionViewCell" customModule="Primovie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="394" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XgX-OS-3P9">
+                <rect key="frame" x="0.0" y="0.0" width="394" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWm-QB-sHm">
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="300"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xz8-4l-pai">
+                                <rect key="frame" x="0.0" y="0.0" width="394" height="300"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wyB-1o-alp">
+                                <rect key="frame" x="15" y="258" width="364" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="ua5-3n-zRI"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaz-e6-Jmg">
+                                <rect key="frame" x="15" y="218" width="127" height="30"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xz8-4l-pai" firstAttribute="top" secondItem="iWm-QB-sHm" secondAttribute="top" id="JIt-gg-OAL"/>
+                            <constraint firstAttribute="bottom" secondItem="wyB-1o-alp" secondAttribute="bottom" constant="15" id="Kbv-a4-QHj"/>
+                            <constraint firstItem="Xz8-4l-pai" firstAttribute="leading" secondItem="iWm-QB-sHm" secondAttribute="leading" id="S9T-r8-egI"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kaz-e6-Jmg" secondAttribute="trailing" constant="30" id="UXa-My-g97"/>
+                            <constraint firstAttribute="trailing" secondItem="wyB-1o-alp" secondAttribute="trailing" constant="15" id="ZEg-Tg-3LY"/>
+                            <constraint firstItem="wyB-1o-alp" firstAttribute="top" secondItem="kaz-e6-Jmg" secondAttribute="bottom" constant="10" id="bYi-Gi-Qe4"/>
+                            <constraint firstAttribute="bottom" secondItem="Xz8-4l-pai" secondAttribute="bottom" id="c7i-Lh-xX5"/>
+                            <constraint firstAttribute="trailing" secondItem="Xz8-4l-pai" secondAttribute="trailing" id="fJk-YL-lpn"/>
+                            <constraint firstItem="kaz-e6-Jmg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iWm-QB-sHm" secondAttribute="top" constant="15" id="hwn-rh-pqh"/>
+                            <constraint firstItem="wyB-1o-alp" firstAttribute="leading" secondItem="iWm-QB-sHm" secondAttribute="leading" constant="15" id="qXH-b4-CNw"/>
+                            <constraint firstItem="kaz-e6-Jmg" firstAttribute="leading" secondItem="iWm-QB-sHm" secondAttribute="leading" constant="15" id="uNE-Vw-KM7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="iWm-QB-sHm" firstAttribute="leading" secondItem="XgX-OS-3P9" secondAttribute="leading" id="Ofw-du-iBY"/>
+                    <constraint firstAttribute="bottom" secondItem="iWm-QB-sHm" secondAttribute="bottom" id="gI4-mh-96C"/>
+                    <constraint firstAttribute="trailing" secondItem="iWm-QB-sHm" secondAttribute="trailing" id="hQB-dj-2UY"/>
+                    <constraint firstItem="iWm-QB-sHm" firstAttribute="top" secondItem="XgX-OS-3P9" secondAttribute="top" id="otQ-l9-cpg"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                        <real key="value" value="15"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="genreStackView" destination="wyB-1o-alp" id="1ZK-z8-6Sk"/>
+                <outlet property="movieImage" destination="Xz8-4l-pai" id="ZKl-0Y-Ues"/>
+                <outlet property="movieTitle" destination="kaz-e6-Jmg" id="6iZ-6J-Fzb"/>
+            </connections>
+            <point key="canvasLocation" x="217" y="118"/>
+        </collectionViewCell>
+    </objects>
+</document>

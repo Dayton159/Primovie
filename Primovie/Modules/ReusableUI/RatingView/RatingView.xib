@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Semibold.ttf">
+            <string>Lato-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingView" customModule="Primovie" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="yGC-lw-3wS"/>
+                <outlet property="ratingValue" destination="yDt-h7-Lrg" id="aVS-vB-19y"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="35" height="20"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wzi-sP-ZPd">
+                    <rect key="frame" x="0.0" y="-0.5" width="15" height="20"/>
+                    <color key="tintColor" name="star"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="YmV-Hf-sy1"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-h7-Lrg">
+                    <rect key="frame" x="15" y="0.0" width="20" height="20"/>
+                    <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="13"/>
+                    <color key="textColor" name="star"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="yDt-h7-Lrg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GOp-UB-cbO"/>
+                <constraint firstItem="yDt-h7-Lrg" firstAttribute="leading" secondItem="wzi-sP-ZPd" secondAttribute="trailing" id="Gbn-cJ-g0g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="yDt-h7-Lrg" secondAttribute="bottom" id="UaX-ni-MRU"/>
+                <constraint firstItem="wzi-sP-ZPd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YQP-kX-4nY"/>
+                <constraint firstAttribute="trailing" secondItem="yDt-h7-Lrg" secondAttribute="trailing" id="gpR-fN-auF"/>
+                <constraint firstItem="wzi-sP-ZPd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pwr-sU-ejH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wzi-sP-ZPd" secondAttribute="bottom" id="xGH-Xs-g8w"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="134.78260869565219" y="138.28125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="star">
+            <color red="0.93725490196078431" green="0.64313725490196072" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PropertyPosterTableViewCell" customModule="Primovie" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="coP-Ug-VRc" customClass="PropertyPosterTableViewCell" customModule="Primovie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="coP-Ug-VRc" id="DFc-e2-Rp9">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6Ak-nm-Qfr">
+                        <rect key="frame" x="309" y="10" width="85" height="335"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CeL-fg-LwX" customClass="MoviePropertiesView" customModule="Primovie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="85" height="98.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="L6w-Z2-wQj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="calendar" catalog="system"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Released Date"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Eo-5E-zSE" customClass="MoviePropertiesView" customModule="Primovie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="118.5" width="85" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="tBt-GY-5aE"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="timer" catalog="system"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Duration"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7W-Og-a4y" customClass="MoviePropertiesView" customModule="Primovie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="236.5" width="85" height="98.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="Wd0-mI-K1a"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="star" catalog="system"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Rating"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p30-hT-jMN">
+                        <rect key="frame" x="15" y="5" width="279" height="345"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="p30-hT-jMN" firstAttribute="leading" secondItem="DFc-e2-Rp9" secondAttribute="leading" constant="15" id="05h-T9-FvM"/>
+                    <constraint firstAttribute="bottom" secondItem="p30-hT-jMN" secondAttribute="bottom" id="DmY-hA-MdG"/>
+                    <constraint firstAttribute="trailing" secondItem="6Ak-nm-Qfr" secondAttribute="trailing" constant="20" id="EtB-55-eOJ"/>
+                    <constraint firstAttribute="bottom" secondItem="6Ak-nm-Qfr" secondAttribute="bottom" constant="5" id="hAo-C0-2fQ"/>
+                    <constraint firstItem="p30-hT-jMN" firstAttribute="top" secondItem="DFc-e2-Rp9" secondAttribute="top" constant="5" id="lDK-fa-uab"/>
+                    <constraint firstItem="6Ak-nm-Qfr" firstAttribute="top" secondItem="DFc-e2-Rp9" secondAttribute="top" constant="10" id="qtl-D3-EgI"/>
+                    <constraint firstItem="6Ak-nm-Qfr" firstAttribute="leading" secondItem="p30-hT-jMN" secondAttribute="trailing" constant="15" id="rWx-uN-pH8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="datePropertyView" destination="CeL-fg-LwX" id="z1d-QZ-zeN"/>
+                <outlet property="durationPropertyView" destination="0Eo-5E-zSE" id="Jtj-ny-7gq"/>
+                <outlet property="movieImageView" destination="p30-hT-jMN" id="Y5y-Vd-djt"/>
+                <outlet property="ratingPropertyView" destination="g7W-Og-a4y" id="SaF-UG-H2i"/>
+            </connections>
+            <point key="canvasLocation" x="85.507246376811594" y="-49.553571428571423"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
+    </resources>
+</document>

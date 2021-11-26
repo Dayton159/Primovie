@@ -32,29 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "10A73E942741457800ACC9BC"
+               BlueprintIdentifier = "10E9150627417A1C00BAF475"
                BuildableName = "PrimovieTests.xctest"
                BlueprintName = "PrimovieTests"
-               ReferencedContainer = "container:Primovie.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "10A73EA12741464E00ACC9BC"
-               BuildableName = "PrimovieTest.xctest"
-               BlueprintName = "PrimovieTest"
-               ReferencedContainer = "container:Primovie.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "10A73EB12741484700ACC9BC"
-               BuildableName = "Testing.xctest"
-               BlueprintName = "Testing"
                ReferencedContainer = "container:Primovie.xcodeproj">
             </BuildableReference>
          </TestableReference>

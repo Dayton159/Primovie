@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ main ]
 
+  workflow_dispatch:
+
 jobs:
   build-and-test:
     runs-on: macos-latest
@@ -16,6 +18,10 @@ jobs:
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app
       
+    - name: Install Dependencies
+      run: |
+         pod install --repo-update
+      
     - name: Build and test
       run: |
-        xcodebuild test -workspace Primovie.xcodeproj/project.xcworkspace -scheme "CI" -destination "platform=iOS Simulator,name=iPhone SE (2nd generation)"
+        xcodebuild clean build test -workspace Primovie.xcworkspace -scheme "CI" -destination "platform=iOS Simulator,name=iPhone 11"

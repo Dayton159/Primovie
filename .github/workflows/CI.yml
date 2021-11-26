@@ -11,11 +11,12 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
     - name: Select Xcode
       run: sudo xcode-select -switch /Applications/Xcode_12.4.app
       
     - name: Build and test
-      run: |
-        xcodebuild clean build -workspace Primovie.xcworkspace -scheme CI -destination "platform=iOS Simulator,name=iPhone SE (2nd generation)"
+      run: >-
+        xcodebuild test -workspace Primovie.xcworkspace -scheme CI -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone SE (2nd generation)"

@@ -1,4 +1,5 @@
 # Primovie
+[![CI](https://github.com/Dayton159/Primovie/actions/workflows/CI.yml/badge.svg)](https://github.com/Dayton159/Primovie/actions/workflows/CI.yml)
 Movie App using themoviedb.org built with VIPER & RxSwift
 
 ## How to Run
@@ -20,6 +21,7 @@ Movie App using themoviedb.org built with VIPER & RxSwift
 * Networking
 * Dependency Injection, Singleton, Coordinator, Builder, and Factory Design Pattern
 * Unit Testing
+* Continuous Integration
 
 ## Demo
 

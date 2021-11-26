@@ -22,3 +22,5 @@ Movie App using themoviedb.org built with VIPER & RxSwift
 * Unit Testing
 
 ## Demo
+
+https://user-images.githubusercontent.com/65326258/143555401-afa0b6a3-e3f5-459d-a100-602234c3f5d0.mp4

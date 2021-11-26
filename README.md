@@ -1,5 +1,5 @@
-# Primovie
-[![CI](https://github.com/Dayton159/Primovie/actions/workflows/CI.yml/badge.svg)](https://github.com/Dayton159/Primovie/actions/workflows/CI.yml)
+# Primovie [![CI](https://github.com/Dayton159/Primovie/actions/workflows/CI.yml/badge.svg)](https://github.com/Dayton159/Primovie/actions/workflows/CI.yml)
+
 Movie App using themoviedb.org built with VIPER & RxSwift
 
 ## How to Run

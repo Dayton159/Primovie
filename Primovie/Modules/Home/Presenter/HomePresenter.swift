@@ -14,7 +14,6 @@ class HomePresenter: BasePresenter {
   private var vc: UIViewController?
   private var nowPlayingMovies = BehaviorRelay<[MovieModel]>(value: [])
   private var topRatedMovies = BehaviorRelay<[MovieModel]>(value: [])
-  private var didSelectMovie = PublishSubject<MovieModel>()
   private let router = HomeRouter()
 
   init(interactor: HomeUseCase) {
@@ -27,10 +26,6 @@ class HomePresenter: BasePresenter {
 
   var topRatedMoviesObs: Observable<[MovieModel]> {
     return topRatedMovies.asObservable()
-  }
-
-  var didSelectMovieObs: Observable<MovieModel> {
-    return didSelectMovie.asObservable()
   }
 
   private func getNowPlayMovie(at indexPath: IndexPath) -> MovieModel {

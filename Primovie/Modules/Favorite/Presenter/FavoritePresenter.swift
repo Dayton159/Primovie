@@ -13,7 +13,6 @@ class FavoritePresenter: BasePresenter {
   private let interactor: FavoriteUseCase
   private var vc: UIViewController?
   private var favoriteMovies = BehaviorRelay<[MovieModel]>(value: [])
-  private var didSelectMovie = PublishSubject<MovieModel>()
   private let router = FavoriteRouter()
 
   init(interactor: FavoriteUseCase) {
@@ -22,10 +21,6 @@ class FavoritePresenter: BasePresenter {
 
   var favoriteMoviesObs: Observable<[MovieModel]> {
     return favoriteMovies.asObservable()
-  }
-
-  var didSelectMovieObs: Observable<MovieModel> {
-    return didSelectMovie.asObservable()
   }
 
   var getNumberOfMovie: Int {

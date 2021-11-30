@@ -13,7 +13,6 @@ class ExplorePresenter: BasePresenter {
   private let interactor: ExploreUseCase
   private var vc: UIViewController?
   private var movieList = BehaviorRelay<[MovieModel]>(value: [])
-  private var didSelectMovie = PublishSubject<MovieModel>()
   private let router = ExploreRouter()
 
   init(interactor: ExploreUseCase) {
@@ -22,10 +21,6 @@ class ExplorePresenter: BasePresenter {
 
   var movieListObs: Observable<[MovieModel]> {
     return movieList.asObservable()
-  }
-
-  var didSelectMovieObs: Observable<MovieModel> {
-    return didSelectMovie.asObservable()
   }
 
   var getNumberOfMovie: Int {

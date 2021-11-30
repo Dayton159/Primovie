@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1017D47A2755366B00DD4761 /* Common in Frameworks */ = {isa = PBXBuildFile; productRef = 1017D4792755366B00DD4761 /* Common */; };
 		101C0DA92742509000C6C841 /* SampleDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C0DA82742509000C6C841 /* SampleDomain.swift */; };
 		101C0DAB2742543000C6C841 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C0DAA2742543000C6C841 /* HomeInteractorTests.swift */; };
 		101C0DAD27425B6F00C6C841 /* ExploreInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C0DAC27425B6F00C6C841 /* ExploreInteractorTests.swift */; };
@@ -14,6 +15,8 @@
 		101C0DB127426BD700C6C841 /* FavoriteInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C0DB027426BD700C6C841 /* FavoriteInteractorTests.swift */; };
 		101E104E273A87B8006D8FF7 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E104D273A87B8006D8FF7 /* MovieModel.swift */; };
 		101E1050273A87C8006D8FF7 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E104F273A87C8006D8FF7 /* DetailModel.swift */; };
+		1031CB7E2754B4020077E06F /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = 1031CB7D2754B4020077E06F /* Home */; };
+		1031CB8527551C2D0077E06F /* Primovie-Core in Frameworks */ = {isa = PBXBuildFile; productRef = 1031CB8427551C2D0077E06F /* Primovie-Core */; };
 		1054D632273BF98900EBF665 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054D631273BF98900EBF665 /* HomePresenter.swift */; };
 		1054D636273BFA5000EBF665 /* ExplorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054D635273BFA5000EBF665 /* ExplorePresenter.swift */; };
 		1054D63A273BFB1500EBF665 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054D639273BFB1500EBF665 /* FavoritePresenter.swift */; };
@@ -167,6 +170,7 @@
 		101C0DB027426BD700C6C841 /* FavoriteInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractorTests.swift; sourceTree = "<group>"; };
 		101E104D273A87B8006D8FF7 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		101E104F273A87C8006D8FF7 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		1031CB80275512830077E06F /* Common */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Common; path = Modules/Common; sourceTree = "<group>"; };
 		1054D631273BF98900EBF665 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		1054D635273BFA5000EBF665 /* ExplorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePresenter.swift; sourceTree = "<group>"; };
 		1054D639273BFB1500EBF665 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 		107657E2273CBEE300E48E13 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		107657E4273CBF3700E48E13 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		107657E6273CC19200E48E13 /* EmptyViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewBuilder.swift; sourceTree = "<group>"; };
+		1078B5AE2753F284002B8548 /* Home */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Home; path = Modules/Home; sourceTree = "<group>"; };
 		108D802F273D6DCE00602521 /* FavoriteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteView.xib; sourceTree = "<group>"; };
 		108D8031273D771100602521 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		108D8036273D835F00602521 /* NowPlayingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -305,11 +310,14 @@
 			files = (
 				10E9151F2741888600BAF475 /* RxCocoa in Frameworks */,
 				10A73E7A27413A6C00ACC9BC /* Alamofire in Frameworks */,
+				1031CB8527551C2D0077E06F /* Primovie-Core in Frameworks */,
 				10A73E7D27413A7900ACC9BC /* Kingfisher in Frameworks */,
 				10A73E692741364200ACC9BC /* Pods_Primovie.framework in Frameworks */,
+				1017D47A2755366B00DD4761 /* Common in Frameworks */,
 				10A73E7727413A5D00ACC9BC /* JGProgressHUD in Frameworks */,
 				10A73E74274139DC00ACC9BC /* SkeletonView in Frameworks */,
 				10E915212741888600BAF475 /* RxSwift in Frameworks */,
+				1031CB7E2754B4020077E06F /* Home in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,6 +871,8 @@
 			isa = PBXGroup;
 			children = (
 				10EACA66273930F400E759E0 /* .swiftlint.yml */,
+				1078B5AE2753F284002B8548 /* Home */,
+				1031CB80275512830077E06F /* Common */,
 				10FE9F4A2735A69F0075E8AE /* Primovie */,
 				10E9150827417A1C00BAF475 /* PrimovieTests */,
 				10FE9F492735A69F0075E8AE /* Products */,
@@ -967,6 +977,9 @@
 				10A73E7C27413A7900ACC9BC /* Kingfisher */,
 				10E9151E2741888600BAF475 /* RxCocoa */,
 				10E915202741888600BAF475 /* RxSwift */,
+				1031CB7D2754B4020077E06F /* Home */,
+				1031CB8427551C2D0077E06F /* Primovie-Core */,
+				1017D4792755366B00DD4761 /* Common */,
 			);
 			productName = Primovie;
 			productReference = 10FE9F482735A69F0075E8AE /* Primovie.app */;
@@ -1006,6 +1019,7 @@
 				10A73E7827413A6C00ACC9BC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				10A73E7B27413A7900ACC9BC /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				10E9151D2741888600BAF475 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				1031CB8327551C2D0077E06F /* XCRemoteSwiftPackageReference "Primovie-Core" */,
 			);
 			productRefGroup = 10FE9F492735A69F0075E8AE /* Products */;
 			projectDirPath = "";
@@ -1494,6 +1508,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1031CB8327551C2D0077E06F /* XCRemoteSwiftPackageReference "Primovie-Core" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Dayton159/Primovie-Core.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		10A73E72274139DC00ACC9BC /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
@@ -1537,6 +1559,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1017D4792755366B00DD4761 /* Common */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Common;
+		};
+		1031CB7D2754B4020077E06F /* Home */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Home;
+		};
+		1031CB8427551C2D0077E06F /* Primovie-Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1031CB8327551C2D0077E06F /* XCRemoteSwiftPackageReference "Primovie-Core" */;
+			productName = "Primovie-Core";
+		};
 		10A73E73274139DC00ACC9BC /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 10A73E72274139DC00ACC9BC /* XCRemoteSwiftPackageReference "SkeletonView" */;

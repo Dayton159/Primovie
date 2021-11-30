@@ -20,6 +20,34 @@
                ReferencedContainer = "container:Primovie.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Modules/Home">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CommonTests"
+               BuildableName = "CommonTests"
+               BlueprintName = "CommonTests"
+               ReferencedContainer = "container:Modules/Common">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -47,6 +75,26 @@
                BuildableName = "PrimovieTests.xctest"
                BlueprintName = "PrimovieTests"
                ReferencedContainer = "container:Primovie.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Modules/Home">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CommonTests"
+               BuildableName = "CommonTests"
+               BlueprintName = "CommonTests"
+               ReferencedContainer = "container:Modules/Common">
             </BuildableReference>
          </TestableReference>
       </Testables>

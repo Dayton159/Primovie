@@ -2,22 +2,20 @@
 //  File.swift
 //  
 //
-//  Created by Dayton on 30/11/21.
+//  Created by Dayton on 01/12/21.
 //
 
-import Primovie_Core
 import XCTest
 import RxSwift
-@testable import Home
 
-final class MockHomePresenterTests: XCTestCase {
+final class ExplorePresenterTests: XCTestCase {
   var disposeBag: DisposeBag!
-  var sut: HomePresenter<MockHomeInteractor>!
+  var sut: MockExplorePresenter!
 
   override func setUp() {
     super.setUp()
     disposeBag = DisposeBag()
-    sut = HomePresenter(useCase: MockDI.init().provideUseCase())
+    sut = MockExplorePresenter(useCase: MockDI.init().provideUseCase())
 
   }
 
@@ -27,28 +25,28 @@ final class MockHomePresenterTests: XCTestCase {
     super.tearDown()
   }
 
-  func test_Presenter_Fetch_NowPlaying() {
+  func test_Presenter_Fetch_Popular() {
     let expectation = XCTestExpectation(description: "Performs a request")
 
-    sut.nowPlayingObs.subscribe(onNext: { _ in
+    sut.listObs.subscribe(onNext: { _ in
       expectation.fulfill()
     }, onError: { error in
       XCTFail("Expected to success, got error \(error) instead")
     }).disposed(by: disposeBag)
 
-    sut.getMovies(.nowPlaying)
+    sut.getList(request: nil)
   }
 
-  func test_Presenter_Fetch_TopRated() {
+  func test_Presenter_Fetch_Search() {
     let expectation = XCTestExpectation(description: "Performs a request")
 
-    sut.topRatedObs.subscribe(onNext: { _ in
+    sut.listObs.subscribe(onNext: { _ in
       expectation.fulfill()
     }, onError: { error in
       XCTFail("Expected to success, got error \(error) instead")
     }).disposed(by: disposeBag)
 
-    sut.getMovies(.topRated)
+    sut.getList(request: "Iron Man")
   }
 
   func test_Presenter_Loading() {
@@ -60,6 +58,6 @@ final class MockHomePresenterTests: XCTestCase {
       XCTFail("Expected to success, got error \(error) instead")
     }).disposed(by: disposeBag)
 
-    sut.getMovies(.nowPlaying)
+    sut.getList(request: nil)
   }
 }

@@ -5,8 +5,6 @@
 //  Created by Dayton on 30/11/21.
 //
 
-import Common
-
 public enum MovieRequest {
   case nowPlaying
   case topRated

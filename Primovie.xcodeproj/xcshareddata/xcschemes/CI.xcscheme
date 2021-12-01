@@ -48,6 +48,20 @@
                ReferencedContainer = "container:Modules/Common">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ExploreTests"
+               BuildableName = "ExploreTests"
+               BlueprintName = "ExploreTests"
+               ReferencedContainer = "container:Modules/Explore">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -95,6 +109,16 @@
                BuildableName = "CommonTests"
                BlueprintName = "CommonTests"
                ReferencedContainer = "container:Modules/Common">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ExploreTests"
+               BuildableName = "ExploreTests"
+               BlueprintName = "ExploreTests"
+               ReferencedContainer = "container:Modules/Explore">
             </BuildableReference>
          </TestableReference>
       </Testables>

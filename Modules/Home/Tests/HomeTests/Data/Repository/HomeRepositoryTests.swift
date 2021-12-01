@@ -1,17 +1,15 @@
 //
-//  ListMovieRepositoryTests.swift
+//  HomeRepositoryTests.swift
 //  
 //
 //  Created by Dayton on 30/11/21.
 //
 
 import XCTest
-import Primovie_Core
 import Common
 import RxSwift
-@testable import Home
 
-final class ListMovieRepositoryTests: XCTestCase {
+final class HomeRepositoryTests: XCTestCase {
   var disposeBag: DisposeBag!
   var sut: MockHomeRepository!
 

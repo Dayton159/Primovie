@@ -17,6 +17,7 @@
 		101E1050273A87C8006D8FF7 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E104F273A87C8006D8FF7 /* DetailModel.swift */; };
 		1031CB7E2754B4020077E06F /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = 1031CB7D2754B4020077E06F /* Home */; };
 		1031CB8527551C2D0077E06F /* Primovie-Core in Frameworks */ = {isa = PBXBuildFile; productRef = 1031CB8427551C2D0077E06F /* Primovie-Core */; };
+		104747132756A3020072C15C /* Explore in Frameworks */ = {isa = PBXBuildFile; productRef = 104747122756A3020072C15C /* Explore */; };
 		1054D632273BF98900EBF665 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054D631273BF98900EBF665 /* HomePresenter.swift */; };
 		1054D636273BFA5000EBF665 /* ExplorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054D635273BFA5000EBF665 /* ExplorePresenter.swift */; };
 		1054D63A273BFB1500EBF665 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054D639273BFB1500EBF665 /* FavoritePresenter.swift */; };
@@ -171,6 +172,7 @@
 		101E104D273A87B8006D8FF7 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		101E104F273A87C8006D8FF7 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		1031CB80275512830077E06F /* Common */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Common; path = Modules/Common; sourceTree = "<group>"; };
+		104747112756A2F40072C15C /* Explore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Explore; path = Modules/Explore; sourceTree = "<group>"; };
 		1054D631273BF98900EBF665 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		1054D635273BFA5000EBF665 /* ExplorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePresenter.swift; sourceTree = "<group>"; };
 		1054D639273BFB1500EBF665 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			files = (
 				10E9151F2741888600BAF475 /* RxCocoa in Frameworks */,
 				10A73E7A27413A6C00ACC9BC /* Alamofire in Frameworks */,
+				104747132756A3020072C15C /* Explore in Frameworks */,
 				1031CB8527551C2D0077E06F /* Primovie-Core in Frameworks */,
 				10A73E7D27413A7900ACC9BC /* Kingfisher in Frameworks */,
 				10A73E692741364200ACC9BC /* Pods_Primovie.framework in Frameworks */,
@@ -871,6 +874,7 @@
 			isa = PBXGroup;
 			children = (
 				10EACA66273930F400E759E0 /* .swiftlint.yml */,
+				104747112756A2F40072C15C /* Explore */,
 				1078B5AE2753F284002B8548 /* Home */,
 				1031CB80275512830077E06F /* Common */,
 				10FE9F4A2735A69F0075E8AE /* Primovie */,
@@ -980,6 +984,7 @@
 				1031CB7D2754B4020077E06F /* Home */,
 				1031CB8427551C2D0077E06F /* Primovie-Core */,
 				1017D4792755366B00DD4761 /* Common */,
+				104747122756A3020072C15C /* Explore */,
 			);
 			productName = Primovie;
 			productReference = 10FE9F482735A69F0075E8AE /* Primovie.app */;
@@ -1571,6 +1576,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1031CB8327551C2D0077E06F /* XCRemoteSwiftPackageReference "Primovie-Core" */;
 			productName = "Primovie-Core";
+		};
+		104747122756A3020072C15C /* Explore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Explore;
 		};
 		10A73E73274139DC00ACC9BC /* SkeletonView */ = {
 			isa = XCSwiftPackageProductDependency;

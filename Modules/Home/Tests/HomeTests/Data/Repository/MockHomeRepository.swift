@@ -7,4 +7,4 @@
 
 @testable import Home
 
-public typealias MockHomeRepository = MovieListRepository<MockMovieListDataSource, HomeMapper>
+public typealias MockHomeRepository = MovieListRepository<MockHomeDataSource, HomeMapper>

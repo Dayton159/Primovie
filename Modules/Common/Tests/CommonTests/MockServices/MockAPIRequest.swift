@@ -5,7 +5,6 @@
 //  Created by Dayton on 29/11/21.
 //
 
-import Foundation
 @testable import Common
 
 public struct MockAPIRequest: APIRequest {

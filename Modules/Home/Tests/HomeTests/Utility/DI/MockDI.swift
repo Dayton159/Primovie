@@ -6,12 +6,11 @@
 //
 
 import Foundation
-import Primovie_Core
 @testable import Home
 
 final class MockDI: NSObject {
   func provideRepository() -> MockHomeRepository {
-    let remote = MockMovieListDataSource()
+    let remote = MockHomeDataSource()
     let mapper = HomeMapper()
     return MockHomeRepository(remote: remote, mapper: mapper)
   }

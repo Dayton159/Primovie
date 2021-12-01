@@ -64,7 +64,7 @@ class CoreDataService: DatabaseService {
       self.context.perform {
         let fetchRequest = self.request.makeFetchRequest()
         do {
-          guard let fetchedMovie = try self.context.fetch(fetchRequest) as? [CDMovieFavorite] else { return }
+          guard let fetchedMovie = try self.context.fetch(fetchRequest) as? [MovieFavorite] else { return }
           single(.success(MovieMapper.mapMovieCDToEntity(object: fetchedMovie)))
         } catch let error {
           single(.failure(error))
@@ -79,7 +79,7 @@ class CoreDataService: DatabaseService {
       self.context.perform {
         let fetchRequest = self.request.makeFetchRequest()
         do {
-          guard let result = try self.context.fetch(fetchRequest).first as? CDMovieFavorite else { return }
+          guard let result = try self.context.fetch(fetchRequest).first as? MovieFavorite else { return }
           single(.success(MovieMapper.mapDetailCDToEntity(object: result)))
         } catch let error {
           single(.failure(error))
@@ -94,7 +94,7 @@ class CoreDataService: DatabaseService {
       self.context.performAndWait {
         let fetchRequest = self.request.makeFetchRequest()
         do {
-          guard let result = try self.context.fetch(fetchRequest).first as? CDMovieFavorite else { return }
+          guard let result = try self.context.fetch(fetchRequest).first as? MovieFavorite else { return }
           self.context.delete(result)
 
           if self.context.hasChanges {

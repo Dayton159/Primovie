@@ -35,6 +35,8 @@ final class HomeRepositoryTests: XCTestCase {
     }, onFailure: { error in
       XCTFail("Expected to success, got error \(error) instead")
     }).disposed(by: disposeBag)
+
+    wait(for: [expectation], timeout: 2)
   }
 
   func test_Fetch_TopRated() {
@@ -47,5 +49,7 @@ final class HomeRepositoryTests: XCTestCase {
     }, onFailure: { error in
       XCTFail("Expected to success, got error \(error) instead")
     }).disposed(by: disposeBag)
+
+    wait(for: [expectation], timeout: 2)
   }
 }

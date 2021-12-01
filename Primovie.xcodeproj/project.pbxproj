@@ -57,6 +57,8 @@
 		10B38D40273EF89E00CA4C07 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B38D3F273EF89E00CA4C07 /* DetailView.xib */; };
 		10B38D43273EFD8F00CA4C07 /* MoviePropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B38D42273EFD8F00CA4C07 /* MoviePropertiesView.swift */; };
 		10B38D45273EFD9700CA4C07 /* MoviePropertiesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B38D44273EFD9700CA4C07 /* MoviePropertiesView.xib */; };
+		10BEBF97275761AE0091123C /* Favorite in Frameworks */ = {isa = PBXBuildFile; productRef = 10BEBF96275761AE0091123C /* Favorite */; };
+		10BEBF9D275790700091123C /* Primovie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10BEBF9B275790700091123C /* Primovie.xcdatamodeld */; };
 		10E0CF69273D2C880057354F /* MovieListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0CF68273D2C880057354F /* MovieListTableViewCell.swift */; };
 		10E0CF6B273D2C910057354F /* MovieListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10E0CF6A273D2C910057354F /* MovieListTableViewCell.xib */; };
 		10E0CF6E273D2E8D0057354F /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0CF6D273D2E8D0057354F /* RatingView.swift */; };
@@ -103,7 +105,6 @@
 		10E914DE27416F0500BAF475 /* DetailFavoriteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E914DD27416F0500BAF475 /* DetailFavoriteRequest.swift */; };
 		10E914E027416F1200BAF475 /* DeleteMovieRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E914DF27416F1200BAF475 /* DeleteMovieRequest.swift */; };
 		10E914E227416F2500BAF475 /* IsFavoritedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E914E127416F2500BAF475 /* IsFavoritedRequest.swift */; };
-		10E914E527416F3400BAF475 /* Primovie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10E914E327416F3400BAF475 /* Primovie.xcdatamodeld */; };
 		10E914E92741703000BAF475 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E914E82741703000BAF475 /* API.swift */; };
 		10E914EB2741703F00BAF475 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E914EA2741703F00BAF475 /* APIRequest.swift */; };
 		10E914ED2741704D00BAF475 /* AlamofireService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E914EC2741704D00BAF475 /* AlamofireService.swift */; };
@@ -209,6 +210,8 @@
 		10B38D3F273EF89E00CA4C07 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		10B38D42273EFD8F00CA4C07 /* MoviePropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePropertiesView.swift; sourceTree = "<group>"; };
 		10B38D44273EFD9700CA4C07 /* MoviePropertiesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviePropertiesView.xib; sourceTree = "<group>"; };
+		10BEBF95275761A10091123C /* Favorite */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Favorite; path = Modules/Favorite; sourceTree = "<group>"; };
+		10BEBF9C275790700091123C /* Primovie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Primovie.xcdatamodel; sourceTree = "<group>"; };
 		10E0CF68273D2C880057354F /* MovieListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewCell.swift; sourceTree = "<group>"; };
 		10E0CF6A273D2C910057354F /* MovieListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListTableViewCell.xib; sourceTree = "<group>"; };
 		10E0CF6D273D2E8D0057354F /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -255,7 +258,6 @@
 		10E914DD27416F0500BAF475 /* DetailFavoriteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFavoriteRequest.swift; sourceTree = "<group>"; };
 		10E914DF27416F1200BAF475 /* DeleteMovieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMovieRequest.swift; sourceTree = "<group>"; };
 		10E914E127416F2500BAF475 /* IsFavoritedRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsFavoritedRequest.swift; sourceTree = "<group>"; };
-		10E914E427416F3400BAF475 /* Primovie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Primovie.xcdatamodel; sourceTree = "<group>"; };
 		10E914E82741703000BAF475 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		10E914EA2741703F00BAF475 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		10E914EC2741704D00BAF475 /* AlamofireService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireService.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				10A73E692741364200ACC9BC /* Pods_Primovie.framework in Frameworks */,
 				1017D47A2755366B00DD4761 /* Common in Frameworks */,
 				10A73E7727413A5D00ACC9BC /* JGProgressHUD in Frameworks */,
+				10BEBF97275761AE0091123C /* Favorite in Frameworks */,
 				10A73E74274139DC00ACC9BC /* SkeletonView in Frameworks */,
 				10E915212741888600BAF475 /* RxSwift in Frameworks */,
 				1031CB7E2754B4020077E06F /* Home in Frameworks */,
@@ -794,7 +797,7 @@
 		10E914D827416EC900BAF475 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				10E914E327416F3400BAF475 /* Primovie.xcdatamodeld */,
+				10BEBF9B275790700091123C /* Primovie.xcdatamodeld */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 			isa = PBXGroup;
 			children = (
 				10EACA66273930F400E759E0 /* .swiftlint.yml */,
+				10BEBF95275761A10091123C /* Favorite */,
 				104747112756A2F40072C15C /* Explore */,
 				1078B5AE2753F284002B8548 /* Home */,
 				1031CB80275512830077E06F /* Common */,
@@ -985,6 +989,7 @@
 				1031CB8427551C2D0077E06F /* Primovie-Core */,
 				1017D4792755366B00DD4761 /* Common */,
 				104747122756A3020072C15C /* Explore */,
+				10BEBF96275761AE0091123C /* Favorite */,
 			);
 			productName = Primovie;
 			productReference = 10FE9F482735A69F0075E8AE /* Primovie.app */;
@@ -1159,7 +1164,6 @@
 				106F35C027405B990044312A /* AboutView.swift in Sources */,
 				10E9149727416C9900BAF475 /* ExploreRepository.swift in Sources */,
 				10FE9F502735A69F0075E8AE /* ExploreView.swift in Sources */,
-				10E914E527416F3400BAF475 /* Primovie.xcdatamodeld in Sources */,
 				10FE9F4C2735A69F0075E8AE /* AppDelegate.swift in Sources */,
 				10E914D627416EB800BAF475 /* CoreDataRequest.swift in Sources */,
 				10E914A927416D2B00BAF475 /* DetailEntity.swift in Sources */,
@@ -1224,6 +1228,7 @@
 				10E914FF274170FC00BAF475 /* BasePresenter.swift in Sources */,
 				106F35B6273FAA8D0044312A /* TitleGenreTableViewCell.swift in Sources */,
 				10E9148D27416C4D00BAF475 /* ExploreDataSource.swift in Sources */,
+				10BEBF9D275790700091123C /* Primovie.xcdatamodeld in Sources */,
 				10EACA4F273922D600E759E0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1601,6 +1606,10 @@
 			package = 10A73E7B27413A7900ACC9BC /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
+		10BEBF96275761AE0091123C /* Favorite */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Favorite;
+		};
 		10E9151E2741888600BAF475 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 10E9151D2741888600BAF475 /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -1614,12 +1623,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		10E914E327416F3400BAF475 /* Primovie.xcdatamodeld */ = {
+		10BEBF9B275790700091123C /* Primovie.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				10E914E427416F3400BAF475 /* Primovie.xcdatamodel */,
+				10BEBF9C275790700091123C /* Primovie.xcdatamodel */,
 			);
-			currentVersion = 10E914E427416F3400BAF475 /* Primovie.xcdatamodel */;
+			currentVersion = 10BEBF9C275790700091123C /* Primovie.xcdatamodel */;
 			path = Primovie.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -29,25 +29,33 @@ final class HomePresenterTests: XCTestCase {
   func test_Presenter_Fetch_NowPlaying() {
     let expectation = XCTestExpectation(description: "Performs a request")
 
-    sut.nowPlayingObs.subscribe(onNext: { _ in
-      expectation.fulfill()
-    }, onError: { error in
-      XCTFail("Expected to success, got error \(error) instead")
-    }).disposed(by: disposeBag)
+    sut.nowPlayingObs
+      .filter { !$0.isEmpty }
+      .subscribe(onNext: { _ in
+        expectation.fulfill()
+      }, onError: { error in
+        XCTFail("Expected to success, got error \(error) instead")
+      }).disposed(by: disposeBag)
 
     sut.getMovies(.nowPlaying)
+
+    wait(for: [expectation], timeout: 2)
   }
 
   func test_Presenter_Fetch_TopRated() {
     let expectation = XCTestExpectation(description: "Performs a request")
 
-    sut.topRatedObs.subscribe(onNext: { _ in
-      expectation.fulfill()
-    }, onError: { error in
-      XCTFail("Expected to success, got error \(error) instead")
-    }).disposed(by: disposeBag)
+    sut.topRatedObs
+      .filter { !$0.isEmpty }
+      .subscribe(onNext: { _ in
+        expectation.fulfill()
+      }, onError: { error in
+        XCTFail("Expected to success, got error \(error) instead")
+      }).disposed(by: disposeBag)
 
     sut.getMovies(.topRated)
+
+    wait(for: [expectation], timeout: 2)
   }
 
   func test_Presenter_Loading() {
@@ -60,5 +68,7 @@ final class HomePresenterTests: XCTestCase {
     }).disposed(by: disposeBag)
 
     sut.getMovies(.nowPlaying)
+
+    wait(for: [expectation], timeout: 2)
   }
 }

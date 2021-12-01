@@ -67,7 +67,7 @@ final class MovieMapper {
     )
   }
 
-  static func mapMovieCDToEntity(object data: [CDMovieFavorite]) -> [MovieEntity] {
+  static func mapMovieCDToEntity(object data: [MovieFavorite]) -> [MovieEntity] {
     return data.map {
       MovieEntity(
         idMovie: $0.idMovie,
@@ -83,7 +83,7 @@ final class MovieMapper {
     }
   }
 
-  static func mapDetailCDToEntity(object data: CDMovieFavorite) -> DetailEntity {
+  static func mapDetailCDToEntity(object data: MovieFavorite) -> DetailEntity {
     DetailEntity(
       tagline: data.tagline,
       status: data.status,

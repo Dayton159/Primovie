@@ -46,3 +46,33 @@ public extension MovieResponse {
     )
   }
 }
+
+public extension DetailMovieResponse {
+  static var sample: DetailMovieResponse {
+    .init(
+      tagline: "Not Available",
+      status: "Released",
+      runtime: 97,
+      genres: [
+      Genre(id: 0, name: "Science Fiction"),
+      Genre(id: 0, name: "Action"),
+      Genre(id: 0, name: "Adventure")
+      ],
+      language: [MovieLanguage(name: "English")]
+    )
+  }
+
+  static var sampleLocal: DetailMovieResponse {
+    .init(
+      tagline: "In the beginning...",
+      status: "Released",
+      runtime: 157,
+      genres: [
+      Genre(id: 0, name: "Action"),
+      Genre(id: 0, name: "Adventure"),
+      Genre(id: 0, name: "Science Fiction")
+      ],
+      language: [MovieLanguage(name: "Arabic")]
+    )
+  }
+}

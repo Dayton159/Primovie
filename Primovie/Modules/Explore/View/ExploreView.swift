@@ -5,6 +5,7 @@
 //  Created by Dayton on 06/11/21.
 //
 
+import Explore
 import UIKit
 import SkeletonView
 import RxSwift
@@ -83,7 +84,7 @@ class ExploreView: BaseView {
         }
       }).disposed(by: disposeBag)
 
-    self.presenter.movieListObs
+    self.presenter.listObs
       .observe(on: MainScheduler.instance)
       .subscribe(onNext: { [weak self] _ in
         guard let self = self else { return }
@@ -95,10 +96,10 @@ class ExploreView: BaseView {
       .observe(on: MainScheduler.instance)
       .subscribe(onNext: { [weak self] value in
         guard let self = self else { return }
-        value.isEmpty ? self.presenter.getPopularMovies() : self.presenter.getMovieLists(by: value)
+        self.presenter.getList(request: value)
       }).disposed(by: disposeBag)
 
-    self.presenter.getPopularMovies()
+    self.presenter.getList(request: nil)
   }
 
   required init?(coder: NSCoder) {
@@ -108,14 +109,14 @@ class ExploreView: BaseView {
 
 extension ExploreView: AlertPopUpPresentable, EmptyViewDelegate {
   func didTapButtonAction() {
-    self.presenter.getPopularMovies()
+    self.presenter.getList(request: nil)
   }
 }
 
 extension ExploreView: UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if self.presenter.getNumberOfMovie == 0 {
+    if self.presenter.getNumberOfItems == 0 {
       tableView.setEmptyView(
        title: "Movie Data Empty",
        detail: "Oops! Seems like there is nothing to be found.",
@@ -125,17 +126,20 @@ extension ExploreView: UITableViewDelegate, UITableViewDataSource {
     } else {
       tableView.restore()
     }
-    return self.presenter.getNumberOfMovie
+    return self.presenter.getNumberOfItems
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: MovieListTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-    self.presenter.configureCell(cell: cell, indexPath)
+    let data = self.presenter.getItemAt(indexPath)
+    cell.configureCell(data: data)
     return cell
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.presenter.goToDetail(indexPath)
+    let model = self.presenter.getItemAt(indexPath)
+    let detail = ExploreRouter().makeDetailView(movie: model)
+    self.show(detail, sender: self)
   }
 }
 

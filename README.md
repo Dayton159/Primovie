@@ -22,6 +22,11 @@ Movie App using themoviedb.org built with VIPER & RxSwift
 * Dependency Injection, Singleton, Coordinator, Builder, and Factory Design Pattern
 * Unit Testing
 * Continuous Integration
+* Modularization
+
+## Module Relations Diagram
+
+<img src="Module_Relation.jpg">
 
 ## Demo
 

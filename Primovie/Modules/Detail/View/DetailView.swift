@@ -5,15 +5,24 @@
 //  Created by Dayton on 11/11/21.
 //
 
+import Detail
 import UIKit
 import RxSwift
 
 class DetailView: BaseView {
   // MARK: - Properties
   @IBOutlet weak var tableView: UITableView!
-  private let presenter: DetailPresenter
+  private let presenter: DetailPresenter<
+    DetailMovieInteractor,
+    SaveMovieInteractor,
+    DeleteMovieInteractor,
+    IsFavMovieInteractor>
 
-  init(presenter: DetailPresenter) {
+  init(presenter: DetailPresenter<
+       DetailMovieInteractor,
+       SaveMovieInteractor,
+       DeleteMovieInteractor,
+       IsFavMovieInteractor>) {
     self.presenter = presenter
     super.init(nibName: nil, bundle: nil)
   }
@@ -109,15 +118,18 @@ extension DetailView: UITableViewDelegate, UITableViewDataSource {
     switch indexPath.row {
     case 0:
       let cell: PropertyPosterTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-      self.presenter.configureCell(cell: cell)
+      let detail = self.presenter.detailItem
+      cell.configureCell(detail: detail)
       return cell
     case 1:
       let cell: TitleGenreTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-      self.presenter.configureCell(cell: cell)
+      let detail = self.presenter.detailItem
+      cell.configureCell(detail: detail)
       return cell
     default:
       let cell: ContentTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-      self.presenter.configureCell(cell: cell)
+      let detail = self.presenter.detailItem
+      cell.configureCell(detail: detail)
       return cell
     }
   }

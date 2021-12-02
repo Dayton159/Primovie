@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 class TitleGenreTableViewCell: UITableViewCell, Reusable {
   @IBOutlet weak var movieTitle: UILabel!

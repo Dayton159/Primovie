@@ -5,12 +5,13 @@
 //  Created by Dayton on 11/11/21.
 //
 
+import Common
 import UIKit
 import Kingfisher
 
 extension UIImageView {
   func setImageFrom(path: String) {
-    let urlString = Environment.imageLoaderURL + path
+    let urlString = Environment.imageLoader + path
     let supportSpace = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
     self.kf.setImage(with: convertToURL(urlString: supportSpace), placeholder: Constants.Image.placeholder, options: [.cacheMemoryOnly, .transition(.fade(0.5))])
   }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 class NowPlayingCollectionViewCell: UICollectionViewCell, Reusable {
   @IBOutlet weak var movieImage: UIImageView!

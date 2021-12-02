@@ -5,15 +5,16 @@
 //  Created by Dayton on 08/11/21.
 //
 
+import Favorite
 import UIKit
 import RxSwift
 
 class FavoriteView: BaseView {
   // MARK: - Properties
   @IBOutlet weak var tableView: UITableView!
-  private let presenter: FavoritePresenter
+  private let presenter: FavoritesPresenter
 
-  init(presenter: FavoritePresenter) {
+  init(presenter: FavoritesPresenter) {
     self.presenter = presenter
     super.init(nibName: nil, bundle: nil)
   }
@@ -29,7 +30,7 @@ class FavoriteView: BaseView {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.configureNavBar(withTitle: "Favorite", prefersLargeTitles: true)
-    self.presenter.getFavoriteMovies()
+    self.presenter.getList(request: nil)
   }
 
   private func configureTableView() {
@@ -71,7 +72,7 @@ class FavoriteView: BaseView {
         }
       }).disposed(by: disposeBag)
 
-    self.presenter.favoriteMoviesObs
+    self.presenter.listObs
       .observe(on: MainScheduler.instance)
       .subscribe(onNext: { [weak self] _ in
         guard let self = self else { return }
@@ -82,7 +83,8 @@ class FavoriteView: BaseView {
       .observe(on: MainScheduler.instance)
       .subscribe(onNext: { [weak self] _ in
         guard let self = self else { return }
-        self.presenter.goToAbout()
+        let about = FavoriteRouter().makeAboutView()
+        self.show(about, sender: self)
       }).disposed(by: disposeBag)
   }
 
@@ -93,13 +95,13 @@ class FavoriteView: BaseView {
 
 extension FavoriteView: AlertPopUpPresentable, EmptyViewDelegate {
   func didTapButtonAction() {
-    self.presenter.getFavoriteMovies()
+    self.presenter.getList(request: nil)
   }
 }
 
 extension FavoriteView: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if self.presenter.getNumberOfMovie == 0 {
+    if self.presenter.getNumberOfItems == 0 {
       tableView.setEmptyView(
         title: "Movie Data Empty",
         detail: "Oops! Seems like there is nothing to be found.",
@@ -109,16 +111,19 @@ extension FavoriteView: UITableViewDelegate, UITableViewDataSource {
     } else {
       tableView.restore()
     }
-    return self.presenter.getNumberOfMovie
+    return self.presenter.getNumberOfItems
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: MovieListTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-    self.presenter.configureCell(cell: cell, indexPath)
+    let data = self.presenter.getItemAt(indexPath)
+    cell.configureCell(data: data)
     return cell
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.presenter.goToDetail(indexPath)
+    let model = self.presenter.getItemAt(indexPath)
+    let detail = FavoriteRouter().makeDetailView(movie: model)
+    self.show(detail, sender: self)
   }
 }

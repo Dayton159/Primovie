@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 class PropertyPosterTableViewCell: UITableViewCell, Reusable {
   @IBOutlet weak var movieImageView: UIImageView!

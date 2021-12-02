@@ -76,6 +76,20 @@
                ReferencedContainer = "container:Modules/Favorite">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DetailTests"
+               BuildableName = "DetailTests"
+               BlueprintName = "DetailTests"
+               ReferencedContainer = "container:Modules/Detail">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -143,6 +157,16 @@
                BuildableName = "FavoriteTests"
                BlueprintName = "FavoriteTests"
                ReferencedContainer = "container:Modules/Favorite">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DetailTests"
+               BuildableName = "DetailTests"
+               BlueprintName = "DetailTests"
+               ReferencedContainer = "container:Modules/Detail">
             </BuildableReference>
          </TestableReference>
       </Testables>

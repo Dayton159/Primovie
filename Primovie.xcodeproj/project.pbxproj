@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1009C5B82757F450005BF35A /* Detail in Frameworks */ = {isa = PBXBuildFile; productRef = 1009C5B72757F450005BF35A /* Detail */; };
 		1017D47A2755366B00DD4761 /* Common in Frameworks */ = {isa = PBXBuildFile; productRef = 1017D4792755366B00DD4761 /* Common */; };
 		101C0DA92742509000C6C841 /* SampleDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C0DA82742509000C6C841 /* SampleDomain.swift */; };
 		101C0DAB2742543000C6C841 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C0DAA2742543000C6C841 /* HomeInteractorTests.swift */; };
@@ -165,6 +166,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1009C5B62757F43A005BF35A /* Detail */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Detail; path = Modules/Detail; sourceTree = "<group>"; };
 		101C0DA82742509000C6C841 /* SampleDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDomain.swift; sourceTree = "<group>"; };
 		101C0DAA2742543000C6C841 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		101C0DAC27425B6F00C6C841 /* ExploreInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreInteractorTests.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1009C5B82757F450005BF35A /* Detail in Frameworks */,
 				10E9151F2741888600BAF475 /* RxCocoa in Frameworks */,
 				10A73E7A27413A6C00ACC9BC /* Alamofire in Frameworks */,
 				104747132756A3020072C15C /* Explore in Frameworks */,
@@ -877,6 +880,7 @@
 			isa = PBXGroup;
 			children = (
 				10EACA66273930F400E759E0 /* .swiftlint.yml */,
+				1009C5B62757F43A005BF35A /* Detail */,
 				10BEBF95275761A10091123C /* Favorite */,
 				104747112756A2F40072C15C /* Explore */,
 				1078B5AE2753F284002B8548 /* Home */,
@@ -990,6 +994,7 @@
 				1017D4792755366B00DD4761 /* Common */,
 				104747122756A3020072C15C /* Explore */,
 				10BEBF96275761AE0091123C /* Favorite */,
+				1009C5B72757F450005BF35A /* Detail */,
 			);
 			productName = Primovie;
 			productReference = 10FE9F482735A69F0075E8AE /* Primovie.app */;
@@ -1569,6 +1574,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1009C5B72757F450005BF35A /* Detail */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Detail;
+		};
 		1017D4792755366B00DD4761 /* Common */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Common;

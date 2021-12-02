@@ -44,4 +44,23 @@ public extension CDMovieFavorite {
 
     return [favorite1, favorite2, favorite3]
   }
+
+  static func createDetailSample(context: NSManagedObjectContext) -> CDMovieFavorite {
+    let detail = CDMovieFavorite(context: context)
+    detail.idMovie = 524434
+    detail.title = "Eternals"
+    detail.overview = "The Eternals are a team of ancient aliens who have been living on Earth in secret for thousands of years. When an unexpected tragedy forces them out of the shadows, they are forced to reunite against mankind’s most ancient enemy, the Deviants."
+    detail.releaseDate = DateFormatter.JSONResponse.dateFromString("2021-11-03")
+    detail.genres = ["Action", "Adventure", "Science Fiction"]
+    detail.popularity = 2460.8
+    detail.rating = 7.2
+    detail.backdropPath = "/fzKWwcaam9QSTaMSJlORuSojxio.jpg"
+    detail.posterPath = "/6AdXwFTRTAzggD2QUTt5B7JFGKL.jpg"
+    detail.tagline = "In the beginning..."
+    detail.status = "Released"
+    detail.runtime = 157
+    detail.language = "Arabic"
+
+    return detail
+  }
 }

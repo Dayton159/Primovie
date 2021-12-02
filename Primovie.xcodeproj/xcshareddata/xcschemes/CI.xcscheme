@@ -107,6 +107,41 @@
             BlueprintName = "Primovie"
             ReferencedContainer = "container:Primovie.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CommonTests"
+            BuildableName = "CommonTests"
+            BlueprintName = "CommonTests"
+            ReferencedContainer = "container:Modules/Common">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "HomeTests"
+            BuildableName = "HomeTests"
+            BlueprintName = "HomeTests"
+            ReferencedContainer = "container:Modules/Home">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "ExploreTests"
+            BuildableName = "ExploreTests"
+            BlueprintName = "ExploreTests"
+            ReferencedContainer = "container:Modules/Explore">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DetailTests"
+            BuildableName = "DetailTests"
+            BlueprintName = "DetailTests"
+            ReferencedContainer = "container:Modules/Detail">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "FavoriteTests"
+            BuildableName = "FavoriteTests"
+            BlueprintName = "FavoriteTests"
+            ReferencedContainer = "container:Modules/Favorite">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference

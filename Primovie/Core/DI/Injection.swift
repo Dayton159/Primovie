@@ -21,7 +21,10 @@ final class Injection: NSObject {
     let mapper = HomeMapper()
     let repository = HomeRepository(remote: remote, mapper: mapper)
 
-    return Interactor(repository: repository) as! U
+    guard let interactor = Interactor(repository: repository) as? U
+    else { fatalError("Failed to cast Interactor \(String(describing: U.self))")}
+
+    return interactor
   }
 
   func provideExplore<U: UseCase>() -> U where U.Request == String, U.Response == [MovieModel] {
@@ -31,7 +34,10 @@ final class Injection: NSObject {
     let mapper = ExploreMapper()
     let repository = ExploreRepository(remote: remote, mapper: mapper)
 
-    return Interactor(repository: repository) as! U
+    guard let interactor = Interactor(repository: repository) as? U
+    else { fatalError("Failed to cast Interactor \(String(describing: U.self))")}
+
+    return interactor
   }
 
   func provideFavorite<U: UseCase>() -> U where U.Request == Any, U.Response == [MovieModel] {
@@ -40,7 +46,10 @@ final class Injection: NSObject {
     let mapper = FavoritesMapper()
     let repository = FavoritesRepository(remote: locale, mapper: mapper)
 
-    return Interactor(repository: repository) as! U
+    guard let interactor = Interactor(repository: repository) as? U
+    else { fatalError("Failed to cast Interactor \(String(describing: U.self))")}
+
+    return interactor
   }
 
   func provideDetail<U: UseCase>(id: Int, model: MovieModel) -> U where U.Request == DataRequestSource, U.Response == DetailModel {
@@ -55,7 +64,10 @@ final class Injection: NSObject {
 
     let repository = DetailMovieRepository(remote: remote, local: locale, mapperRemote: remoteMapper, mapperLocal: localeMapper, model: model)
 
-    return Interactor(repository: repository) as! U
+    guard let interactor = Interactor(repository: repository) as? U
+    else { fatalError("Failed to cast Interactor \(String(describing: U.self))")}
+
+    return interactor
   }
 
   func provideSave<U: UseCase>() -> U where U.Request == DetailModel, U.Response == Void {
@@ -64,7 +76,10 @@ final class Injection: NSObject {
     let mapper = SaveMapper()
     let repository = SaveMovieRepository(local: local, mapper: mapper)
 
-    return Interactor(repository: repository) as! U
+    guard let interactor = Interactor(repository: repository) as? U
+    else { fatalError("Failed to cast Interactor \(String(describing: U.self))")}
+
+    return interactor
   }
 
   func provideDelete<U: UseCase>(id: Int) -> U where U.Request == Any, U.Response == Void {
@@ -72,7 +87,10 @@ final class Injection: NSObject {
     let local = DeleteDataSource(request: request, context: CoreDataStack.shared.context())
     let repository = DeleteMovieRepository(local: local)
 
-    return Interactor(repository: repository) as! U
+    guard let interactor = Interactor(repository: repository) as? U
+    else { fatalError("Failed to cast Interactor \(String(describing: U.self))")}
+
+    return interactor
   }
 
   func provideIsFavorite<U: UseCase>(id: Int) -> U where U.Request == Any, U.Response == Bool {
@@ -80,6 +98,9 @@ final class Injection: NSObject {
     let local = IsFavoritedDataSource(request: request, context: CoreDataStack.shared.context())
     let repository = IsFavoriteMovieRepository(local: local)
 
-    return Interactor(repository: repository) as! U
+    guard let interactor = Interactor(repository: repository) as? U
+    else { fatalError("Failed to cast Interactor \(String(describing: U.self))")}
+
+    return interactor
   }
 }

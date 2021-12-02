@@ -66,7 +66,6 @@
 		10E914D027416E8600BAF475 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E914CF27416E8600BAF475 /* UICollectionView+Extension.swift */; };
 		10E914FB274170D900BAF475 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E914FA274170D900BAF475 /* MainTabView.swift */; };
 		10E914FD274170E500BAF475 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E914FC274170E500BAF475 /* BaseView.swift */; };
-		10E915022741712900BAF475 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E915012741712900BAF475 /* Environment.swift */; };
 		10E9151F2741888600BAF475 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 10E9151E2741888600BAF475 /* RxCocoa */; };
 		10E915212741888600BAF475 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 10E915202741888600BAF475 /* RxSwift */; };
 		10EACA3A2739134400E759E0 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EACA392739134400E759E0 /* AppCoordinator.swift */; };
@@ -163,8 +162,6 @@
 		10E914CF27416E8600BAF475 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		10E914FA274170D900BAF475 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		10E914FC274170E500BAF475 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		10E915002741711500BAF475 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
-		10E915012741712900BAF475 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		10E9150727417A1C00BAF475 /* PrimovieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimovieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E91519274181E300BAF475 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E9151B274181FF00BAF475 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -440,7 +437,6 @@
 				10E914B127416D7300BAF475 /* Helpers */,
 				10E914B027416D6C00BAF475 /* Extensions */,
 				10E914AD27416D5200BAF475 /* BaseModel */,
-				10E914AC27416D4D00BAF475 /* Environment */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -451,15 +447,6 @@
 				10E914AA27416D3B00BAF475 /* Injection.swift */,
 			);
 			path = DI;
-			sourceTree = "<group>";
-		};
-		10E914AC27416D4D00BAF475 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				10E915002741711500BAF475 /* Development.xcconfig */,
-				10E915012741712900BAF475 /* Environment.swift */,
-			);
-			path = Environment;
 			sourceTree = "<group>";
 		};
 		10E914AD27416D5200BAF475 /* BaseModel */ = {
@@ -805,7 +792,6 @@
 				108D8037273D835F00602521 /* NowPlayingCollectionViewCell.swift in Sources */,
 				10E914C627416E2C00BAF475 /* String+Extension.swift in Sources */,
 				10E914FD274170E500BAF475 /* BaseView.swift in Sources */,
-				10E915022741712900BAF475 /* Environment.swift in Sources */,
 				108D803B273D837C00602521 /* TopRatedCollectionViewCell.swift in Sources */,
 				10E914B827416DB200BAF475 /* Delay.swift in Sources */,
 				10E0CF6E273D2E8D0057354F /* RatingView.swift in Sources */,
@@ -904,7 +890,6 @@
 		};
 		10FE9F5A2735A6A10075E8AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10E915002741711500BAF475 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -967,7 +952,6 @@
 		};
 		10FE9F5B2735A6A10075E8AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10E915002741711500BAF475 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

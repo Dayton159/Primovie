@@ -42,7 +42,6 @@
 		10A73E6A2741364200ACC9BC /* Pods_Primovie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E35441756959C64F0F5A5235 /* Pods_Primovie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		10A73E74274139DC00ACC9BC /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 10A73E73274139DC00ACC9BC /* SkeletonView */; };
 		10A73E7727413A5D00ACC9BC /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 10A73E7627413A5D00ACC9BC /* JGProgressHUD */; };
-		10A73E7A27413A6C00ACC9BC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 10A73E7927413A6C00ACC9BC /* Alamofire */; };
 		10A73E7D27413A7900ACC9BC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 10A73E7C27413A7900ACC9BC /* Kingfisher */; settings = {ATTRIBUTES = (Required, ); }; };
 		10B38D40273EF89E00CA4C07 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B38D3F273EF89E00CA4C07 /* DetailView.xib */; };
 		10B38D43273EFD8F00CA4C07 /* MoviePropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B38D42273EFD8F00CA4C07 /* MoviePropertiesView.swift */; };
@@ -199,7 +198,6 @@
 			files = (
 				1009C5B82757F450005BF35A /* Detail in Frameworks */,
 				10E9151F2741888600BAF475 /* RxCocoa in Frameworks */,
-				10A73E7A27413A6C00ACC9BC /* Alamofire in Frameworks */,
 				104747132756A3020072C15C /* Explore in Frameworks */,
 				1031CB8527551C2D0077E06F /* Primovie-Core in Frameworks */,
 				10A73E7D27413A7900ACC9BC /* Kingfisher in Frameworks */,
@@ -625,7 +623,6 @@
 			packageProductDependencies = (
 				10A73E73274139DC00ACC9BC /* SkeletonView */,
 				10A73E7627413A5D00ACC9BC /* JGProgressHUD */,
-				10A73E7927413A6C00ACC9BC /* Alamofire */,
 				10A73E7C27413A7900ACC9BC /* Kingfisher */,
 				10E9151E2741888600BAF475 /* RxCocoa */,
 				10E915202741888600BAF475 /* RxSwift */,
@@ -671,7 +668,6 @@
 			packageReferences = (
 				10A73E72274139DC00ACC9BC /* XCRemoteSwiftPackageReference "SkeletonView" */,
 				10A73E7527413A5D00ACC9BC /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
-				10A73E7827413A6C00ACC9BC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				10A73E7B27413A7900ACC9BC /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				10E9151D2741888600BAF475 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				1031CB8327551C2D0077E06F /* XCRemoteSwiftPackageReference "Primovie-Core" */,
@@ -1127,14 +1123,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		10A73E7827413A6C00ACC9BC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		10A73E7B27413A7900ACC9BC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1184,11 +1172,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 10A73E7527413A5D00ACC9BC /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
-		};
-		10A73E7927413A6C00ACC9BC /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 10A73E7827413A6C00ACC9BC /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 		10A73E7C27413A7900ACC9BC /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

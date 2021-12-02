@@ -16,6 +16,7 @@
 		1054D644273C481300EBF665 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054D643273C481300EBF665 /* DetailView.swift */; };
 		1054D647273C489100EBF665 /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054D646273C489100EBF665 /* FavoriteRouter.swift */; };
 		1054D64A273C491D00EBF665 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1054D649273C491D00EBF665 /* HomeRouter.swift */; };
+		105CF06527595520009AC18F /* Primovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CF06427595520009AC18F /* Primovie.swift */; };
 		106F35B2273F9E8F0044312A /* PropertyPosterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F35B1273F9E8F0044312A /* PropertyPosterTableViewCell.swift */; };
 		106F35B4273F9E9B0044312A /* PropertyPosterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 106F35B3273F9E9B0044312A /* PropertyPosterTableViewCell.xib */; };
 		106F35B6273FAA8D0044312A /* TitleGenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F35B5273FAA8D0044312A /* TitleGenreTableViewCell.swift */; };
@@ -114,6 +115,7 @@
 		1054D643273C481300EBF665 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		1054D646273C489100EBF665 /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
 		1054D649273C491D00EBF665 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		105CF06427595520009AC18F /* Primovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primovie.swift; sourceTree = "<group>"; };
 		106F35B1273F9E8F0044312A /* PropertyPosterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyPosterTableViewCell.swift; sourceTree = "<group>"; };
 		106F35B3273F9E9B0044312A /* PropertyPosterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyPosterTableViewCell.xib; sourceTree = "<group>"; };
 		106F35B5273FAA8D0044312A /* TitleGenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleGenreTableViewCell.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 		10E9150827417A1C00BAF475 /* PrimovieTests */ = {
 			isa = PBXGroup;
 			children = (
+				105CF06427595520009AC18F /* Primovie.swift */,
 			);
 			path = PrimovieTests;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				TargetAttributes = {
 					10E9150627417A1C00BAF475 = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
 						TestTargetID = 10FE9F472735A69F0075E8AE;
 					};
 					10FE9F472735A69F0075E8AE = {
@@ -768,6 +772,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105CF06527595520009AC18F /* Primovie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +847,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5W5HYDSXPX;
@@ -855,6 +861,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dayton.PrimovieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Primovie.app/Primovie";
@@ -865,6 +872,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5W5HYDSXPX;

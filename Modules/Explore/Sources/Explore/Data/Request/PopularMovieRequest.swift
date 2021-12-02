@@ -10,4 +10,6 @@ import Common
 public struct PopularMovieRequest: APIRequest {
   public typealias Response = MovieListResponses
   public var pathname: String { "movie/popular" }
+
+  public init() { }
 }

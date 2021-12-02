@@ -11,4 +11,8 @@ public struct DetailRemoteRequest: APIRequest {
   public typealias Response = DetailMovieResponse
   public var movieID: Int
   public var pathname: String { "movie/\(movieID)" }
+
+  public init(movieID: Int) {
+    self.movieID = movieID
+  }
 }

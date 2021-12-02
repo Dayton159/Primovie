@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 class ContentTableViewCell: UITableViewCell, Reusable {
   @IBOutlet weak var taglineValue: UILabel!

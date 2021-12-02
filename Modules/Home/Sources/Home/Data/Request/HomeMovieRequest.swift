@@ -13,4 +13,8 @@ public struct HomeMovieRequest: APIRequest {
   public var pathname: String {
     path?.name ?? "movie/now_playing"
   }
+
+  public init(path: MovieRequest? = nil) {
+    self.path = path
+  }
 }

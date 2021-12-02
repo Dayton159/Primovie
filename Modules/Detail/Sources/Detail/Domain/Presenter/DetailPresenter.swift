@@ -28,17 +28,20 @@ IsFavUseCase.Response == Bool {
   private let _saveUseCase: SaveUseCase
   private let _deleteUseCase: DeleteUseCase
   private let _isFavUseCase: IsFavUseCase
+  private let _request: DataRequestSource
 
   public init(
     detailUseCase: DetailUseCase,
     saveUseCase: SaveUseCase,
     deleteUseCase: DeleteUseCase,
-    isFavUseCase: IsFavUseCase
+    isFavUseCase: IsFavUseCase,
+    request: DataRequestSource
   ) {
     _detailUseCase = detailUseCase
     _saveUseCase = saveUseCase
     _deleteUseCase = deleteUseCase
     _isFavUseCase = isFavUseCase
+    _request = request
   }
 
   private let detailMovie = BehaviorRelay<DetailModel?>(value: nil)
@@ -51,12 +54,16 @@ IsFavUseCase.Response == Bool {
   public var isFavoriteObs: Observable<Bool> {
     return isFavorite.asObservable()
   }
+
+  public var detailItem: DetailModel {
+    return detailMovie.value ?? DetailModel.sample
+  }
 }
 
 public extension DetailPresenter {
-  func getMovieDetail(request: DetailUseCase.Request) {
+  func getMovieDetail() {
     self.state.onNext(.loading)
-    self._detailUseCase.execute(request: request)
+    self._detailUseCase.execute(request: _request)
       .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
       .observe(on: MainScheduler.instance)
       .subscribe(onSuccess: { [weak self] detail in

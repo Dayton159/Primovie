@@ -44,8 +44,8 @@ final class MockDI: NSObject {
     return MockIsFavoriteRepository(local: local)
   }
 
-  func providePresenter() -> MockDetailPresenter {
-    let detail = MockDetailMovieInteractor(repository: provideMovieRepository())
+  func providePresenter(request: DataRequestSource = .network) -> MockDetailPresenter {
+    let detail = MockDetailMovieInteractor(repository: provideMovieRepository(request: request))
     let save = MockSaveMovieInteractor(repository: provideSaveRepository())
     let delete = MockDeleteMovieInteractor(repository: provideDeleteRepository())
     let isFav = MockIsFavMovieInteractor(repository: provideIsFavoriteRepository())
@@ -54,6 +54,8 @@ final class MockDI: NSObject {
       detailUseCase: detail,
       saveUseCase: save,
       deleteUseCase: delete,
-      isFavUseCase: isFav)
+      isFavUseCase: isFav,
+      request: request
+    )
   }
 }

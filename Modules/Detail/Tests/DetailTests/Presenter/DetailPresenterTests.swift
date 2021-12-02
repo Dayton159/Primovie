@@ -36,12 +36,13 @@ final class DetailPresenterTests: XCTestCase {
         XCTFail("Expected to success, got error \(error) instead")
       }).disposed(by: disposeBag)
 
-    sut.getMovieDetail(request: .network)
+    sut.getMovieDetail()
 
     wait(for: [expectation], timeout: 2)
   }
 
   func test_Get_Movie_Detail_Local() {
+    sut = MockDI.init().providePresenter(request: .local)
     let expectation = XCTestExpectation(description: "Performs a request")
 
     sut.detailMovieObs
@@ -52,7 +53,7 @@ final class DetailPresenterTests: XCTestCase {
         XCTFail("Expected to success, got error \(error) instead")
       }).disposed(by: disposeBag)
 
-    sut.getMovieDetail(request: .local)
+    sut.getMovieDetail()
 
     wait(for: [expectation], timeout: 2)
   }
@@ -76,7 +77,7 @@ final class DetailPresenterTests: XCTestCase {
         XCTFail("Expected to success, got error \(error) instead")
       }).disposed(by: disposeBag)
 
-    sut.getMovieDetail(request: .network)
+    sut.getMovieDetail()
 
     wait(for: [expectation], timeout: 2)
   }
@@ -121,7 +122,7 @@ final class DetailPresenterTests: XCTestCase {
       XCTFail("Expected to success, got error \(error) instead")
     }).disposed(by: disposeBag)
 
-    sut.getMovieDetail(request: .network)
+    sut.getMovieDetail()
 
     wait(for: [expectation], timeout: 2)
   }

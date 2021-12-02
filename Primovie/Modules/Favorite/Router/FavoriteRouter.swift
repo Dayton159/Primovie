@@ -6,11 +6,23 @@
 //
 
 import UIKit
+import Common
+import Detail
 
 class FavoriteRouter {
   func makeDetailView(movie: MovieModel) -> UIViewController {
-    let interactor = Injection.init().provideDetailUseCase(id: movie.idMovie, movie: movie)
-    let presenter = DetailPresenter(interactor: interactor, request: .local)
+    let detailUseCase: DetailMovieInteractor = Injection.init().provideDetail(id: movie.idMovie, model: movie)
+    let saveUseCase: SaveMovieInteractor = Injection.init().provideSave()
+    let deleteUseCase: DeleteMovieInteractor = Injection.init().provideDelete(id: movie.idMovie)
+    let isFavUseCase: IsFavMovieInteractor = Injection.init().provideIsFavorite(id: movie.idMovie)
+
+    let presenter = DetailPresenter(
+      detailUseCase: detailUseCase,
+      saveUseCase: saveUseCase,
+      deleteUseCase: deleteUseCase,
+      isFavUseCase: isFavUseCase,
+      request: .local)
+
     return DetailView(presenter: presenter)
   }
 

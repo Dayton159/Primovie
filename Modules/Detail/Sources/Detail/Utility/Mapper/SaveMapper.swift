@@ -74,4 +74,6 @@ public struct SaveMapper: Mapper {
         language: domain.language)
     )
   }
+
+  public init() { }
 }

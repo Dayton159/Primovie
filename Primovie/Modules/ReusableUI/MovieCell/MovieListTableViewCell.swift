@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 class MovieListTableViewCell: UITableViewCell, Reusable {
   @IBOutlet weak var movieImageView: UIImageView!

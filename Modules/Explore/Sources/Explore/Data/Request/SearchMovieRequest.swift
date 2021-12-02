@@ -18,4 +18,6 @@ public struct SearchMovieRequest: APIRequest {
       URLQueryItem(name: "query", value: searchQuery)
     ]
   }
+
+  public init() { }
 }

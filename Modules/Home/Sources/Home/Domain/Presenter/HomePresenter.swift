@@ -9,6 +9,7 @@ import Primovie_Core
 import Common
 import RxSwift
 import RxCocoa
+import Foundation
 
 public class HomePresenter<HomeUseCase: UseCase>: BasePresenter
 where HomeUseCase.Request == MovieRequest,
@@ -29,6 +30,14 @@ where HomeUseCase.Request == MovieRequest,
   public init(useCase: HomeUseCase) {
     self._useCase = useCase
     super.init()
+  }
+
+  public func getNowPlaying(at indexPath: IndexPath) -> MovieModel {
+    return nowPlaying.value[indexPath.row]
+  }
+
+  public func getTopRated(at indexPath: IndexPath) -> MovieModel {
+    return topRated.value[indexPath.row]
   }
 
   public func getMovies(_ request: HomeUseCase.Request) {

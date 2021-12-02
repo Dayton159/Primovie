@@ -6,81 +6,80 @@
 //
 
 import Foundation
+import Primovie_Core
+import Home
+import Explore
+import Favorite
+import Common
+import Detail
 
 final class Injection: NSObject {
+  // MARK: - Modularization
+  func provideHome<U: UseCase>() -> U where U.Request == MovieRequest, U.Response == [MovieModel] {
+    let request = HomeMovieRequest()
+    let remote = MovieListDataSource(request: request)
+    let mapper = HomeMapper()
+    let repository = HomeRepository(remote: remote, mapper: mapper)
 
-  // MARK: - DataSource
-  private func provideHomeDataSource() -> HomeDataSourceProtocol {
-    let nowPlayingRequest = NowPlayingMovieRequest()
-    let topRatedRequest = TopRatedMovieRequest()
-    let genreRequest = GenreMovieRequest()
-    return HomeDataSource.sharedInstance(nowPlayingRequest, topRatedRequest, genreRequest)
+    return Interactor(repository: repository) as! U
   }
 
-  private func provideExploreDataSource() -> ExploreDataSourceProtocol {
+  func provideExplore<U: UseCase>() -> U where U.Request == String, U.Response == [MovieModel] {
     let popularRequest = PopularMovieRequest()
     let searchRequest = SearchMovieRequest()
-    return ExploreDataSource.sharedInstance(popularRequest, searchRequest)
+    let remote = ExploreDataSource(popular: popularRequest, search: searchRequest)
+    let mapper = ExploreMapper()
+    let repository = ExploreRepository(remote: remote, mapper: mapper)
+
+    return Interactor(repository: repository) as! U
   }
 
-  private func provideDetailDataSource(id: Int) -> DetailDataSourceProtocol {
-    let detailRequest = DetailMovieRequest(movieID: id)
-    return DetailDataSource.sharedInstance(detailRequest)
+  func provideFavorite<U: UseCase>() -> U where U.Request == Any, U.Response == [MovieModel] {
+    let request = FavoritesRequest()
+    let locale = FavoritesDataSource(context: CoreDataStack.shared.context(), request: request)
+    let mapper = FavoritesMapper()
+    let repository = FavoritesRepository(remote: locale, mapper: mapper)
+
+    return Interactor(repository: repository) as! U
   }
 
-  private func provideFavoriteDataSource() -> FavoriteDataSourceProtocol {
-    let request = FavoriteRequest()
-    return FavoriteDataSource.sharedInstance(request)
+  func provideDetail<U: UseCase>(id: Int, model: MovieModel) -> U where U.Request == DataRequestSource, U.Response == DetailModel {
+    let remoteRequest = DetailRemoteRequest(movieID: id)
+    let localeRequest = DetailLocalRequest(id: id)
+
+    let remote = DetailRemoteDataSource(request: remoteRequest)
+    let locale = DetailLocalDataSource(context: CoreDataStack.shared.context(), request: localeRequest)
+
+    let remoteMapper = RemoteMapper()
+    let localeMapper = LocalMapper()
+
+    let repository = DetailMovieRepository(remote: remote, local: locale, mapperRemote: remoteMapper, mapperLocal: localeMapper, model: model)
+
+    return Interactor(repository: repository) as! U
   }
 
-  private func provideDetailFavoriteDataSource(id: Int) -> DetailFavoriteDataSourceProtocol {
-    let isFavoritedReq = IsFavoritedRequest(id: id)
-    let saveMovieReq = SaveMovieRequest()
-    let deleteMovieReq = DeleteMovieRequest(id: id)
-    let detailFavReq = DetailFavoriteRequest(id: id)
-    return DetailFavoriteDataSource.sharedInstance(isFavoritedReq, saveMovieReq, deleteMovieReq, detailFavReq)
+  func provideSave<U: UseCase>() -> U where U.Request == DetailModel, U.Response == Void {
+    let request = SaveMovieRequest()
+    let local = SaveDataSource(request: request, context: CoreDataStack.shared.context())
+    let mapper = SaveMapper()
+    let repository = SaveMovieRepository(local: local, mapper: mapper)
+
+    return Interactor(repository: repository) as! U
   }
 
-  // MARK: - Repository
-  private func provideHomeRepository() -> HomeRepositoryProtocol {
-    let dataSource = provideHomeDataSource()
-    return HomeRepository.sharedInstance(dataSource)
+  func provideDelete<U: UseCase>(id: Int) -> U where U.Request == Any, U.Response == Void {
+    let request = DeleteMovieRequest(id: id)
+    let local = DeleteDataSource(request: request, context: CoreDataStack.shared.context())
+    let repository = DeleteMovieRepository(local: local)
+
+    return Interactor(repository: repository) as! U
   }
 
-  private func provideExploreRepository() -> ExploreRepositoryProtocol {
-    let dataSource = provideExploreDataSource()
-    return ExploreRepository.sharedInstance(dataSource)
-  }
+  func provideIsFavorite<U: UseCase>(id: Int) -> U where U.Request == Any, U.Response == Bool {
+    let request = IsFavoritedRequest(id: id)
+    let local = IsFavoritedDataSource(request: request, context: CoreDataStack.shared.context())
+    let repository = IsFavoriteMovieRepository(local: local)
 
-  private func provideDetailRepository(id: Int) -> DetailRepositoryProtocol {
-    let remote = provideDetailDataSource(id: id)
-    let locale = provideDetailFavoriteDataSource(id: id)
-    return DetailRepository.sharedInstance(remote, locale)
-  }
-
-  private func provideFavoriteRepository() -> FavoriteRepositoryProtocol {
-    let dataSource = provideFavoriteDataSource()
-    return FavoriteRepository.sharedInstance(dataSource)
-  }
-
-  // MARK: - Use Case
-  func provideHomeUseCase() -> HomeUseCase {
-    let repository = provideHomeRepository()
-    return HomeInteractor(repository: repository)
-  }
-
-  func provideExploreUseCase() -> ExploreUseCase {
-    let repository = provideExploreRepository()
-    return ExploreInteractor(repository: repository)
-  }
-
-  func provideDetailUseCase(id: Int, movie: MovieModel) -> DetailUseCase {
-    let repository = provideDetailRepository(id: id)
-    return DetailInteractor(repository: repository, movieModel: movie)
-  }
-
-  func provideFavoriteUseCase() -> FavoriteUseCase {
-    let repository = provideFavoriteRepository()
-    return FavoriteInteractor(repository: repository)
+    return Interactor(repository: repository) as! U
   }
 }

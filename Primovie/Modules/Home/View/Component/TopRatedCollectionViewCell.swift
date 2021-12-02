@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 class TopRatedCollectionViewCell: UICollectionViewCell, Reusable {
   @IBOutlet weak var movieImage: UIImageView!

@@ -66,4 +66,6 @@ public struct RemoteMapper: Mapper {
     )
     )
   }
+
+  public init() { }
 }

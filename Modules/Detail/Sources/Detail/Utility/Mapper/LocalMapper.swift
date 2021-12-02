@@ -66,4 +66,6 @@ public struct LocalMapper: Mapper {
     )
     )
   }
+
+  public init() { }
 }

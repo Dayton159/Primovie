@@ -13,4 +13,8 @@ public struct DetailLocalRequest: CoreDataRequest {
   public var predicate: NSPredicate? {
     NSPredicate(format: "idMovie == \(id)")
   }
+
+  public init(id: Int) {
+    self.id = id
+  }
 }

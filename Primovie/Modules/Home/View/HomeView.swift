@@ -5,6 +5,8 @@
 //  Created by Dayton on 08/11/21.
 //
 
+import Home
+import Common
 import UIKit
 import RxSwift
 
@@ -15,7 +17,7 @@ enum Section: String, CaseIterable {
 
 class HomeView: BaseView {
   @IBOutlet weak var collectionView: UICollectionView!
-  private let presenter: HomePresenter
+  private let presenter: HomePresenter<HomeInteractor>
   private lazy var dataSource = makeDataSource()
   private var sections = Section.allCases
 
@@ -23,7 +25,7 @@ class HomeView: BaseView {
   typealias DataSource = UICollectionViewDiffableDataSource<Section, MovieModel>
   typealias Snapshot = NSDiffableDataSourceSnapshot<Section, MovieModel>
 
-  init(presenter: HomePresenter) {
+  init(presenter: HomePresenter<HomeInteractor>) {
     self.presenter = presenter
     super.init(nibName: nil, bundle: nil)
   }
@@ -46,11 +48,13 @@ class HomeView: BaseView {
         switch self.sections[indexPath.section] {
         case .nowPlaying:
           let cell: NowPlayingCollectionViewCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-          self.presenter.configureCell(cell: cell, indexPath)
+          let model = self.presenter.getNowPlaying(at: indexPath)
+          cell.configureCell(model: model)
           return cell
         case .topRated:
           let cell: TopRatedCollectionViewCell = collectionView.dequeueReusableCell(indexPath: indexPath)
-          self.presenter.configureCell(cell: cell, indexPath)
+          let model = self.presenter.getTopRated(at: indexPath)
+          cell.configureCell(model: model)
           return cell
         }
       }
@@ -107,7 +111,7 @@ class HomeView: BaseView {
         }
       }).disposed(by: disposeBag)
 
-    Observable.combineLatest(self.presenter.nowPlayingMoviesObs, self.presenter.topRatedMoviesObs)
+    Observable.combineLatest(self.presenter.nowPlayingObs, self.presenter.topRatedObs)
       .observe(on: MainScheduler.instance)
       .filter { !$0.isEmpty && !$1.isEmpty}
       .subscribe(onNext: { [weak self] nowPlaying, topRated in
@@ -115,8 +119,8 @@ class HomeView: BaseView {
         self.applySnapshot(now: nowPlaying, top: topRated)
       }).disposed(by: disposeBag)
 
-    self.presenter.getNowPlayingMovies()
-    self.presenter.getTopRatedMovies()
+    self.presenter.getMovies(.nowPlaying)
+    self.presenter.getMovies(.topRated)
   }
 
   private func applySnapshot(now: [MovieModel], top: [MovieModel], animatingDifferences: Bool = true) {
@@ -135,6 +139,7 @@ class HomeView: BaseView {
 extension HomeView: AlertPopUpPresentable, UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     guard let movie = dataSource.itemIdentifier(for: indexPath) else { return }
-    self.presenter.goToDetail(movie: movie)
+    let detail = HomeRouter().makeDetailView(movie: movie)
+    self.show(detail, sender: self)
   }
 }

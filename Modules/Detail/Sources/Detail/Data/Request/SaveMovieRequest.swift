@@ -7,4 +7,6 @@
 
 import Common
 
-public struct SaveMovieRequest: CoreDataRequest { }
+public struct SaveMovieRequest: CoreDataRequest {
+  public init() { }
+}
